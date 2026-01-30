@@ -1,0 +1,16 @@
+[workspace]
+channels = ["conda-forge"]
+name = "fresnel_equations_with_metals"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+start = "python main.py"
+
+[dependencies]
+python = "3.12.*"
+numpy = ">=2.3.5,<3"
+plotly = ">=6.5.0,<7"
+
+[pypi-dependencies]
+kaleido = ">=1.2.0, <2"
