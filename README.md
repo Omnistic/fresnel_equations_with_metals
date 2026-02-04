@@ -7,4 +7,14 @@ I guess that for simplicity we are tempted to assume that mirrors do exactly tha
 
 In addition to what Katsumoto wrote in the forum answer, I wanted to give more insights into this topic by showing a simulation. I used the [Fresnel Equations](https://en.wikipedia.org/wiki/Fresnel_equations) from Wikipedia.
 
+Below are the formulas I used from the article (the background is transparent and doesn't appear well in dark mode).
+
 ![r_s](https://wikimedia.org/api/rest_v1/media/math/render/svg/1ef14e8fb7b00e2b3e3e81b249fe280c9e748d35)
+![r_p](https://wikimedia.org/api/rest_v1/media/math/render/svg/b087790ec188db86770d80b136c778fa3b28481e)
+
+Note that I used the very last part of the equation where ```theta_t``` has been eliminated.
+
+In my code, ```air``` and ```silver``` are n_1 and n_2 from the formulas, respectively. Since silver is a metal, the refractive index is a complex number. I took the values for the refractive index of silver from [refractiveindex.info](https://refractiveindex.info/?shelf=main&book=Ag&page=Jiang) (Shelf:MAIN, Book:Ag, Page: Jiang et al. 2016) using a wavelength of 0.88um. The actual values are ```n=0.010400``` (the real part) and ```k=5.8570``` (the imaginary part), leading to ```silver = n + i*k```.
+
+Lastly, in my code ```aoi``` is the angle of incidence or ```theta_i``` in the Wikipedia formula. The phase of each reflection coefficient (*s* and *p*) as a function of the angle of incidence.
+
